@@ -28,4 +28,3 @@ function Tileset(url) {
         console.log("F_DrawTile: Loaded");
     };
 };
-
