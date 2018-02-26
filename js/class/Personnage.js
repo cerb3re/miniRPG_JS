@@ -36,6 +36,39 @@ Personnage.prototype.dessinerPersonnage = function(context) {
 	this.largeur, this.hauteur, 
 	(this.x * 32) - (this.largeur / 2) + 16, (this.y * 32) - this.hauteur + 24,
 	this.largeur, this.hauteur
-);
-
+    );
 };
+
+Personnage.prototype.getCoordonneesAdjacentes = function(direction)  {
+	var coord = {'x' : this.x, 'y' : this.y};
+	switch(direction) {
+		case DIRECTION.BAS : 
+			coord.y++;
+			break;
+		case DIRECTION.GAUCHE : 
+			coord.x--;
+			break;
+		case DIRECTION.DROITE : 
+			coord.x++;
+			break;
+		case DIRECTION.HAUT : 
+			coord.y--;
+			break;
+	}
+	return coord;
+};
+	
+Personnage.prototype.deplacer = function(direction, map) {
+	this.direction = direction;
+		
+	var prochaineCase = this.getCoordonneesAdjacentes(direction);
+	if(prochaineCase.x < 0 || prochaineCase.y < 0 || prochaineCase.x >= map.getLargeur() || prochaineCase.y >= map.getHauteur()) {
+		return false;
+	}
+		
+	this.x = prochaineCase.x;
+	this.y = prochaineCase.y;
+		
+	return true;
+};
+
