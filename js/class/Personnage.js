@@ -11,6 +11,8 @@ var DIRECTION = {
     "DROITE": 2,
     "HAUT": 3
 };
+var DUREE_ANIMATION = 4; // number of actual sprite animation for a same direction.
+var DUREE_DEPLACEMENT = 15; // time that sprite stay in activity movement for fluidity.
 
 function Personnage(url, x, y, direction) {
 	this.x = x; 
@@ -30,12 +32,40 @@ function Personnage(url, x, y, direction) {
 };
 
 Personnage.prototype.dessinerPersonnage = function(context) {
+        var frame = 0; 
+        var decalageX = 0, decalageY = 0; 
+        if(this.etatAnimation >= DUREE_DEPLACEMENT) {
+                this.etatAnimation = -1;
+        } else if(this.etatAnimation >= 0) {
+                frame = Math.floor(this.etatAnimation / DUREE_ANIMATION);
+                if(frame > 3) {
+                        frame %= 4;
+                }
+                var pixelsAParcourir = 32 - (32 * (this.etatAnimation / DUREE_DEPLACEMENT));
+
+                if(this.direction == DIRECTION.HAUT) {
+                        decalageY = pixelsAParcourir;
+                } else if(this.direction == DIRECTION.BAS) {
+                        decalageY = -pixelsAParcourir;
+                } else if(this.direction == DIRECTION.GAUCHE) {
+                        decalageX = pixelsAParcourir;
+                } else if(this.direction == DIRECTION.DROITE) {
+                        decalageX = -pixelsAParcourir;
+                }
+
+                this.etatAnimation++;
+        }
+
+
 	context.drawImage(
 	this.image, 
-	0, this.direction * this.hauteur, 
-	this.largeur, this.hauteur, 
-	(this.x * 32) - (this.largeur / 2) + 16, (this.y * 32) - this.hauteur + 24,
-	this.largeur, this.hauteur
+	this.largeur * frame, 
+        this.direction * this.hauteur, 
+	this.largeur, 
+        this.hauteur, 
+	(this.x * 32) - (this.largeur / 2) + 16 + decalageX, (this.y * 32) - this.hauteur + 24 + decalageY, // rapidity of mvt
+	this.largeur, 
+        this.hauteur
     );
 };
 
@@ -59,13 +89,18 @@ Personnage.prototype.getCoordonneesAdjacentes = function(direction)  {
 };
 	
 Personnage.prototype.deplacer = function(direction, map) {
+        if(this.etatAnimation >= 0) {
+            return false;
+        }
+
 	this.direction = direction;
 		
 	var prochaineCase = this.getCoordonneesAdjacentes(direction);
 	if(prochaineCase.x < 0 || prochaineCase.y < 0 || prochaineCase.x >= map.getLargeur() || prochaineCase.y >= map.getHauteur()) {
 		return false;
 	}
-		
+        
+	this.etatAnimation = 1;	
 	this.x = prochaineCase.x;
 	this.y = prochaineCase.y;
 		
