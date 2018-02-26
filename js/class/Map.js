@@ -17,6 +17,12 @@ function Map(nom) {
     
     this.tileset = new Tileset(mapData.tileset);
     this.terrain = mapData.terrain;
+    this.personnages = new Array();
+
+};
+
+Map.prototype.addPersonnage = function(perso) {
+	this.personnages.push(perso);
 };
 
 Map.prototype.getHauteur = function() {
@@ -35,4 +41,11 @@ Map.prototype.dessinerMap = function(context) {
 			this.tileset.dessinerTile(ligne[j], context, j * 32, y);
 		}
 	}
+        for(var i = 0, l = this.personnages.length ; i < l ; i++) {
+	this.personnages[i].dessinerPersonnage(context);
+        
+        console.log("F_dessinerMap: Loaded");
+    }
 };
+
+
