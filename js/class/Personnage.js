@@ -63,7 +63,8 @@ Personnage.prototype.dessinerPersonnage = function(context) {
         this.direction * this.hauteur, 
 	this.largeur, 
         this.hauteur, 
-	(this.x * 32) - (this.largeur / 2) + 16 + decalageX, (this.y * 32) - this.hauteur + 24 + decalageY, // rapidity of mvt
+	(this.x * 32) - (this.largeur / 2) + 16 + decalageX, 
+        (this.y * 32) - this.hauteur + 24 + decalageY, // rapidity of mvt
 	this.largeur, 
         this.hauteur
     );
