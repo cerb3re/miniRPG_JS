@@ -6,7 +6,7 @@
 console.log("C_Rpg: Loaded");
 //var ts = new Tileset("tileTest.png");
 var map = new Map("premiere");
-//    map.addPersonnage(new Personnage("firstChar.png", 7, 8, DIRECTION.BAS));
+    map.addPersonnage(new Personnage("firstChar.png", 14, 8, DIRECTION.GAUCHE));
 //    map.addPersonnage(new Personnage("firstChar.png", 7, 14, DIRECTION.GAUCHE));
 var joueur = new Personnage("firstChar.png", 7, 14, DIRECTION.BAS);
 map.addPersonnage(joueur);
