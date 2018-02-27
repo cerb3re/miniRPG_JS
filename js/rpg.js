@@ -22,7 +22,7 @@ window.onload = function() {
     setInterval(function() {
 	map.dessinerMap(ctx);  
         PNJ.deplacer(DIRECTION.GAUCHE, map);
-    }, 30);
+    }, 31);
     
        // if (PNJ.getCoordonneesAdjacentes()['x'] > 1) 
  
