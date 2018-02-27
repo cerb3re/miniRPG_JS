@@ -7,7 +7,7 @@
 var map = new Map("premiere");
 //    map.addPersonnage(new Personnage("firstChar.png", 7, 14, DIRECTION.GAUCHE));
 var joueur = new Personnage("firstChar.png", 7, 14, DIRECTION.HAUT);
-var PNJ = new Personnage("firstChar.png", 14, 7, DIRECTION.GAUCHE);
+var PNJ = new Personnage("firstChar.png", 14, 8, DIRECTION.GAUCHE);
     map.addPersonnage(PNJ);
     map.addPersonnage(joueur);
 
