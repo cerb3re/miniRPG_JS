@@ -24,7 +24,7 @@ window.onload = function() {
     
     setInterval(function() {
 	map.dessinerMap(ctx);  
-        PNG_Jane.deplacer(DIRECTION.GAUCHE, map);
+        PNG_Jane.deplacerPNJ(DIRECTION.GAUCHE, map);
     }, 31);
     
        // if (PNJ.getCoordonneesAdjacentes()['x'] > 1) 

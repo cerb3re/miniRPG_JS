@@ -112,7 +112,7 @@ Personnage.prototype.deplacerPNJ = function(direction, map) {
 	this.direction = direction;
 		
 	var prochaineCase = this.getCoordonneesAdjacentes(direction);
-	if(prochaineCase.x < 0 || prochaineCase.y < 0 || prochaineCase.x >= map.getLargeur() || prochaineCase.y >= map.getHauteur()) {
+	if(prochaineCase.x >= map.getLargeur() || prochaineCase.y >= map.getHauteur()) {
             return false;
 	}
         
