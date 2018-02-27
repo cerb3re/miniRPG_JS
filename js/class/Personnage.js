@@ -40,7 +40,6 @@ Personnage.prototype.dessinerPersonnage = function(context) {
                         frame %= 4;
                 }
                 var pixelsAParcourir = 32 - (32 * (this.etatAnimation / DUREE_DEPLACEMENT));
-
                 if(this.direction == DIRECTION.HAUT) {
                         decalageY = pixelsAParcourir;
                 } else if(this.direction == DIRECTION.BAS) {
@@ -53,7 +52,6 @@ Personnage.prototype.dessinerPersonnage = function(context) {
 
                 this.etatAnimation++;
         }
-
 
 	context.drawImage(
 	this.image, 
@@ -96,7 +94,7 @@ Personnage.prototype.deplacer = function(direction, map) {
 		
 	var prochaineCase = this.getCoordonneesAdjacentes(direction);
 	if(prochaineCase.x < 0 || prochaineCase.y < 0 || prochaineCase.x >= map.getLargeur() || prochaineCase.y >= map.getHauteur()) {
-		return false;
+            return false;
 	}
         
 	this.etatAnimation = 1;	
@@ -106,3 +104,21 @@ Personnage.prototype.deplacer = function(direction, map) {
 	return true;
 };
 
+Personnage.prototype.deplacerPNJ = function(direction, map) {
+    if(this.etatAnimation >= 0) {
+            return false;
+        }
+
+	this.direction = direction;
+		
+	var prochaineCase = this.getCoordonneesAdjacentes(direction);
+	if(prochaineCase.x < 0 || prochaineCase.y < 0 || prochaineCase.x >= map.getLargeur() || prochaineCase.y >= map.getHauteur()) {
+            return false;
+	}
+        
+	this.etatAnimation = 1;	
+	this.x = prochaineCase.x;
+	this.y = prochaineCase.y;
+		
+	return true;
+};
