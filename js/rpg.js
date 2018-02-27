@@ -7,8 +7,11 @@
 var map = new Map("premiere");
 //    map.addPersonnage(new Personnage("firstChar.png", 7, 14, DIRECTION.GAUCHE));
 var joueur = new Personnage("firstChar.png", 7, 14, DIRECTION.HAUT);
-var PNJ = new Personnage("firstChar.png", 14, 8, DIRECTION.GAUCHE);
-    map.addPersonnage(PNJ);
+var PNG_Jane = new Personnage("/firstMap/jane.png", 14, 8, DIRECTION.GAUCHE);
+var PNG_Joe = new Personnage("/firstMap/joe.png", 5, 14, DIRECTION.DROITE);
+    
+    map.addPersonnage(PNG_Joe);
+    map.addPersonnage(PNG_Jane);
     map.addPersonnage(joueur);
 
 
@@ -21,7 +24,7 @@ window.onload = function() {
     
     setInterval(function() {
 	map.dessinerMap(ctx);  
-        PNJ.deplacer(DIRECTION.GAUCHE, map);
+        PNG_Jane.deplacer(DIRECTION.GAUCHE, map);
     }, 31);
     
        // if (PNJ.getCoordonneesAdjacentes()['x'] > 1) 
