@@ -2,8 +2,6 @@
     Created on : 26 févr. 2018, 21:42:42
     Author     : Tanguy CHENIER
 */
-
-console.log("C_Personnage: Loaded");
     
 var DIRECTION = {
     "BAS": 0,

@@ -3,8 +3,6 @@
     Author     : Tanguy CHENIER
 */
 
-console.log("C_Map: Loaded");
-
 function Map(nom) {
     var xhr = getXMLHttpRequest();
     
@@ -43,9 +41,7 @@ Map.prototype.dessinerMap = function(context) {
 	}
         for(var i = 0, l = this.personnages.length ; i < l ; i++) {
 	this.personnages[i].dessinerPersonnage(context);
-        
-        console.log("F_dessinerMap: Loaded");
-    }
+        }
 };
 
 

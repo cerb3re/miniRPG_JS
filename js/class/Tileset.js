@@ -3,8 +3,6 @@
     Author     : Tanguy CHENIER
 */
 
-console.log("C_Tileset: Loaded");
-
 // use to print a tile
 function Tileset(url) {
     this.image = new Image();
@@ -25,6 +23,5 @@ function Tileset(url) {
         var xSource = (xSourceEnTiles - 1) * 32;
         var ySource = (ySourceEnTiles - 1) * 32;
         context.drawImage(this.image, xSource, ySource, 32, 32, xDestination, yDestination, 32, 32);
-        console.log("F_DrawTile: Loaded");
     };
 };
