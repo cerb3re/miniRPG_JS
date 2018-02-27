@@ -11,6 +11,7 @@ This game is a RPG made in JS and must be launch in a web serveur (XHR execution
 ![alt text](https://github.com/cerb3re/miniRPG_JS/blob/master/demo/firstChar.png)<br/>
 ![alt text](https://github.com/cerb3re/miniRPG_JS/blob/master/demo/firstMovement.png)<br/>
 - 4: soon: A little story + house
+![alt text](https://github.com/cerb3re/miniRPG_JS/blob/master/demo/firstMapSecondLook.png)<br/>
 - 5: Coming: A text Dialog interaction
 
 
