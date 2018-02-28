@@ -35,12 +35,16 @@ window.onload = function() {
                 map = new Map(sec);
                 joueur = new Personnage("firstChar.png", 14, 8, DIRECTION.HAUT);
                 map.addPersonnage(joueur);
+                PNG_Jane = new Personnage("/firstMap/jane.png", 14, 8, DIRECTION.GAUCHE)
+                map.addPersonnage(PNG_Jane);
+        PNG_Jane.deplacerPNJ(DIRECTION.GAUCHE, map);
+
             }
-            if (posYPlayer === 8 && posXPlayer === 14) {
+            else if (posYPlayer === 8 && posXPlayer === 14) {
                 map = new Map(first);
                 joueur = new Personnage("firstChar.png", 0, 8, DIRECTION.HAUT);
                 map.addPersonnage(joueur);
-                    map.addPersonnage(PNG_Joe);
+                map.addPersonnage(PNG_Joe);
     map.addPersonnage(PNG_Jane);
             }
     }, 37);
