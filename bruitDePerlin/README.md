@@ -11,6 +11,7 @@ http://cochoy-jeremy.developpez.com/tutoriels/2d/introduction-bruit-perlin/
 - https://fr.wikipedia.org/wiki/Bruit_de_Perlin
 - https://fr.wikipedia.org/wiki/Bruit_de_valeur
 - https://en.wikipedia.org/wiki/Diffusion-limited_aggregation
+- https://fr.wikipedia.org/wiki/D%C3%A9termination_des_surfaces_cach%C3%A9es
 
 # By
 T.CHENIER - 2018
