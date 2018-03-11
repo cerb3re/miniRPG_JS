@@ -8,6 +8,9 @@ Perlin nose is made in some steps and use for generate texture.
 
 # Infos
 http://cochoy-jeremy.developpez.com/tutoriels/2d/introduction-bruit-perlin/
+- https://fr.wikipedia.org/wiki/Bruit_de_Perlin
+- https://fr.wikipedia.org/wiki/Bruit_de_valeur
+- https://en.wikipedia.org/wiki/Diffusion-limited_aggregation
 
 # By
 T.CHENIER - 2018
