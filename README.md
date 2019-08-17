@@ -1,5 +1,7 @@
 # Mini RPG Game
 
+`MUST BE OPEN WITH MICROSOFT EDGE DU TO UPDATE RESTRICTION`
+
 # About
 This game is a RPG made in JS and must be launch in a web serveur (XHR execution).
 
