@@ -3,7 +3,7 @@
 `MUST BE OPEN WITH MICROSOFT EDGE DU TO UPDATE RESTRICTION`
 
 # About
-This game is a RPG made in JS and must be launch in a web serveur (XHR execution).
+This game is a RPG made in JS and must be launch in a web server (XHR execution).
 
 # Release
 - 1: Just print tile with position.
